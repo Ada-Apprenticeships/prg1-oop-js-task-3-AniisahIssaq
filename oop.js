@@ -60,44 +60,44 @@ function todaysDate() {
 
 // task class to represent a task with a title, priority, and date added
 class Task {
-  _title; // private variable for the task title, priority and date added
-  _priority; 
-  _added; 
+  #title; // private variable for the task title, priority and date added
+  #priority; 
+  #added; 
   
   constructor(title, priority) {
-    this._title = title; // sets the task title
-    this._priority = validatePriority(priority); // validates and set the task priority
-    this._added = todaysDate(); // sets the added date using todaysDate function
+    this.#title = title; // sets the task title
+    this.#priority = validatePriority(priority); // validates and set the task priority
+    this.#added = todaysDate(); // sets the added date using todaysDate function
   }
     
   // getter for the task title
   get title() {
-    return this._title;
+    return this.#title;
   }
 
   // getter for the task priority
   get priority() {
-    return this._priority;
+    return this.#priority;
   }
 
   // setter for the task priority
   set priority(priority) {
-    this._priority = validatePriority(priority); // Validate and set the priority
+    this.#priority = validatePriority(priority); // validate and set the priority
   }
 
   // getter for the date the task was added
   get added() {
-    return this._added;
+    return this.#added;
   }
 }
 
 // ToDo class to manage a list of tasks
 class ToDo {
   constructor() {
-    this.tasks = []; // initializes an empty array to store tasks
+    this.tasks = []; // creates an empty array to store tasks
   }
 
-  // lists all tasks or filter by priority
+  // lists all tasks or filters by priority
   list(priority = 0) {
     if (priority === 0) {
       // returns all tasks if no specific priority is given
@@ -116,7 +116,7 @@ class ToDo {
     return this.tasks.length; // returns the new total number of tasks
   } 
   
-  // remove a task by title
+  // removes a task by title
   remove(title) {
     const index = this.tasks.findIndex(task => task.title === title); // finds the task by title
     if (index !== -1) {
