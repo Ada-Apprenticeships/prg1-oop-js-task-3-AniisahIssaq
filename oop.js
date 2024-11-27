@@ -138,7 +138,7 @@ class ToDo {
 }
 
 
-// Leave this code here for the automated tests
+// Leave this code here for the automated tests.
 module.exports = {
   PRIORITY, validInteger, validatePriority, todaysDate, ToDo, Task,
 }
